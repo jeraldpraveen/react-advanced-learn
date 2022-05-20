@@ -4,7 +4,9 @@ import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UserList";
 
 function App() {
-  const [userList, setUserList] = useState([{ name: "Jerald", age: 28 }]);
+  const [userList, setUserList] = useState([
+    { name: "Jerald", age: 28, id: 1 },
+  ]);
 
   const onAddHandler = (enteredName, eneteredAge) => {
     setUserList((prevState) => {
