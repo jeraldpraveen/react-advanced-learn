@@ -44,18 +44,16 @@ const AddUser = (props) => {
   };
 
   return (
-    // JSX LIMITATION ----> No Multiple JSX Elements(Only Single Object must be returned)
-    // We can return an Array Of Course(REACT can process Arrays)
-    [
-      error && (
+    // The <div> Problem ---> Unneccessary Divs
+    <div>
+      {error && (
         <ErrorModal
-          key="error-modal"
           title={error.title}
           message={error.message}
           onConfirm={errorHandler}
         />
-      ),
-      <Card className={classes.input} key="add-user-card">
+      )}
+      <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
           <input
@@ -73,8 +71,8 @@ const AddUser = (props) => {
           />
           <Button type="submit">Add User</Button>
         </form>
-      </Card>,
-    ]
+      </Card>
+    </div>
   );
 };
 
