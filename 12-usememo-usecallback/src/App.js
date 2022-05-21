@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 import "./App.css";
 import Button from "./components/UI/Button/Button";
@@ -9,10 +9,10 @@ function App() {
 
   console.log("APP RUNNING");
 
-  const togleParaHandler = () => {
+  const togleParaHandler = useCallback(() => {
     if (!showPara) setShowPara(true);
     else setShowPara(false);
-  };
+  }, []);
 
   return (
     <div className="app">
