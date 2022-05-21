@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./App.css";
 import Button from "./components/UI/Button/Button";
+import Demo from "./components/Demo/Demo";
 
 function App() {
   const [showPara, setShowPara] = useState(false);
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      {showPara && <p>This is New</p>}
+      <Demo show={showPara} />
       <Button onClick={togleParaHandler}>Show Para !</Button>
     </div>
   );
