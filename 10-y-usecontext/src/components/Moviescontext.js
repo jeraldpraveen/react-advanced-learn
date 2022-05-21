@@ -8,8 +8,18 @@ class Moviescontext extends Component {
     this.state = {
       director: "Shankar",
       movie: "Boys",
+      changeMovie: this.changeMovie,
+      changeDirector: this.changeDirector,
     };
   }
+
+  changeMovie = (newMovie) => {
+    this.setState({ movie: newMovie });
+  };
+
+  changeDirector = (newDirector) => {
+    this.setState({ director: newDirector });
+  };
 
   render() {
     return (
