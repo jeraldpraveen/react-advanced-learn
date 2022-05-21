@@ -26,18 +26,21 @@ const Login = (props) => {
     isValid: null,
   });
 
+  //Check Browser Console For Significance
+  const { isValid: emailIsValid } = emailState;
+
   useEffect(() => {
     // console.log("useEffect Is Triggered");
     const identifier = setTimeout(() => {
       console.log("setTimeout Is Triggered");
-      setFormIsValid(emailState.isValid && enteredPassword.trim().length > 6);
+      setFormIsValid(emailIsValid && enteredPassword.trim().length > 6);
     }, 500);
 
     return () => {
       console.log("CLEANUP");
       clearTimeout(identifier);
     };
-  }, [emailState.value, enteredPassword]);
+  }, [emailIsValid, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     dispatchEmail({ type: "EMAIL_INPUT", val: event.target.value });
