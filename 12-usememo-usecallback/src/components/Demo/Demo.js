@@ -1,8 +1,9 @@
 import React from "react";
+import MyPara from "./MyPara";
 
 const Demo = (props) => {
   console.log("DEMO RUNNING");
-  return <p>{props.show ? "This is my New Para!" : ""}</p>;
+  return <MyPara>{props.show ? "This is my New Para!" : ""}</MyPara>;
 };
 
-export default Demo;
+export default React.memo(Demo);
